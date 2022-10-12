@@ -1,0 +1,128 @@
+1. //fIND FACTORIAL USING FUNCTION AND LOOPS.
+
+#include<iostream>
+using namespace std;
+int factorial(int n) 
+{
+	unsigned long fact = 1;
+  if (n < 0)
+        cout<<"Error! Factorial of a negative number doesn't exist."<<endl;
+    else 
+   {
+        for (int i = 1; i <= n; ++i) 
+	{
+			
+            fact *= i;
+      }
+      return fact;
+    }
+
+
+}
+
+int main() 
+{
+
+  int n;
+
+  cout << "Enter a positive integer: ";
+  cin >> n;
+
+  cout << "Factorial of " << n << " = " << factorial(n);
+
+  return 0;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+2. //fIND THE AMRSTRONG NUMBER USING FUNCTION
+
+
+#include<iostream>
+using namespace std;
+int Armstrong(int n)
+{
+	int org,r,sum;
+	org=n;
+	while(n>0)    
+   {    
+     r=n%10;    
+     sum=sum+(r*r*r);    
+     n=n/10;    
+   }    
+   if(org==sum)    
+      cout<<"Number is Armstrong."<<sum;    
+   else    
+     cout<<"Number is not Armstrong."<<sum; 
+	
+}
+int main()
+{
+	int n;
+	cout<<"Enter the number"<<endl;
+	cin>>n;
+	Armstrong(n);
+	return 0;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+3. //Program to print all the numbers divisible by 3 and 5 in between 100 to 200 using function.
+
+
+#include <iostream>
+using namespace std;
+void result(int n)
+{	
+	// iterate from 100 to 200
+	for (int num = 100; num < n; num++)
+	{	
+		if (num % 3 == 0 && num % 5 == 0)
+			cout << num << " ";
+	}
+}
+int main()
+{	
+	int n = 200;	
+	// Calling function
+	result(n);
+	return 0;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+4. //program to find GCD and LCM of 2 numbers usin function
+
+
+#include <iostream>
+using namespace std;
+void LCM(int a, int b);
+int main() 
+{
+  int a, b, hcf;
+  cout << "Enter two numbers: ";
+  cin >> a >> b;
+  LCM(a,b);
+}
+
+void LCM(int a, int b)
+{
+  int hcf;
+  if ( b > a) 
+  {   
+    int temp = b;
+    b = a;
+    a = temp;
+  }
+    
+  for (int i = 1; i <=  b; ++i) 
+  {
+    if (a % i == 0 && b % i ==0) 
+    {
+      hcf = i;
+    }
+  }
+
+  cout << "HCF = " << hcf;
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
