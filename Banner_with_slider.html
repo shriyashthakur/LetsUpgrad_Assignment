@@ -1,0 +1,127 @@
+<html>
+    <body>
+        <div class="slider-banner">
+            <input type="radio" name="slider" id="slideA" checked/>
+            <div class="slider-image">
+              <img src="http://farm9.staticflickr.com/8241/8562523343_9bb49b7b7b.jpg" />
+              <span class="nav">
+                <label for="slideC" class="prev">&lt;</label>
+                <label for="slideB" class="next">&gt;</label>
+              </span>
+            </div>
+          
+            <input type="radio" name="slider" id="slideB"/>
+            <div class="slider-image">
+              <img src="http://farm9.staticflickr.com/8517/8562729616_35b1384aa1.jpg" />
+              <span class="nav">
+                <label for="slideA" class="prev">&lt;</label>
+                <label for="slideC" class="next">&gt;</label>
+              </span>
+            </div>
+          
+            <input type="radio" name="slider" id="slideC"/>
+            <div class="slider-image">
+              <img src="http://farm9.staticflickr.com/8465/8113424031_72048dd887.jpg" />
+              <span class="nav">
+                <label for="slideB" class="prev">&lt;</label>
+                <label for="slideA" class="next">&gt;</label>
+              </span>
+            </div>
+          
+            <div class="bullet-nav">
+              <label for="slideA" id="bulletA" class="bullet"></label>
+              <label for="slideB" id="bulletB" class="bullet"></label>
+              <label for="slideC" id="bulletC" class="bullet"></label>
+            </div>
+          </div>  
+    </body>
+    <style>
+        body {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: rgb(209, 33, 33);
+}
+
+.slider-banner {
+  position: relative;
+  display: inline-block;
+  width: 562px;
+  height: 380px;
+  text-align: center;
+  margin-top: 40px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.slider-banner input { display: none; }
+.slider-image {
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  width: 550px;
+  height: 320px;
+  border: 6px solid white;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: left .2s ease-in;
+  overflow: hidden;
+}
+
+.slider-image img { width: 100%; }
+.nav label {
+  position: absolute;
+  top: 40%;
+  display: block;
+  color: rgba(255,255,255,.5);
+  font-family: 'Arial', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 50px;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0,0,0,.5);
+  text-align: center;
+  opacity: 0;
+  z-index: 9;
+}
+
+input:checked + .slider-image {
+  position: absolute;
+  display: inline-block;
+  opacity: 1; 
+  visibility: visible;
+  transition: left .2s ease-in;
+}
+
+.nav label:hover { opacity: 1; }
+.slider-image img:hover + .nav label { opacity: .75; }
+.nav .prev { left: 0; border-radius: 0  10px 10px 0; }
+.nav .next { right: 0; border-radius: 10px  0 0 10px; }
+
+.bullet-nav {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.bullet {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 10px;
+  background-color: #555;
+  border: 1px solid #111;
+}
+
+.bullet:first-child { border-radius: 10px 0 0 10px; }
+.bullet:last-child { border-radius: 0 10px 10px 0; }
+
+input#slideA:checked ~ .bullet-nav label#bulletA,
+input#slideB:checked ~ .bullet-nav label#bulletB,
+input#slideC:checked ~ .bullet-nav label#bulletC {
+  background-color: #FF6464;
+}
+    </style>
+</html>
